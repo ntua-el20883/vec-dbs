@@ -70,8 +70,40 @@ For Windows:
 
 ## VS-Code
 There are some useful extentions:
-- WSL
-- Docker
+- WSL, by Microsoft.
+- Docker, by Microsoft.
+- Dev Containers, by Microsoft.
+
+## Setup Dev Container
+Dev Containers ensure a consistent development environment across different setups.
+
+- **Initialize the Dev Container Configuration:**
+  - Open your project folder in VS Code.
+  - Press `Ctrl+Shift+P` to open the Command Palette.
+  - Type `Dev Containers: Add Dev Container Configuration Files` and select it.
+  - Choose the following configuration:
+      - Add to workspace. 
+      - Python 3.
+      - 3.12 bullseye (default).
+      - Skip to the end (do not add other feautures).
+
+- **Customize the Configuration:**
+  - A `.devcontainer` folder will be created in your project directory, containing `devcontainer.json` and possibly a `Dockerfile`.
+  - Modify these files to specify the necessary tools, extensions, and settings for your project.
+
+- **Reopen in Container:**
+  - After configuring, press `Ctrl+Shift+P` and select `Dev Containers: Reopen in Container`.
+  - VS Code will build the Docker container as per your configuration and reopen the project within this environment.
+
+**4. Install Necessary Python Packages:**
+
+With your virtual environment activated, install the required packages.
+
+- **Install Client Libraries:**
+  - In the integrated terminal of VS Code, run:
+    ```bash
+    pip install pymilvus qdrant-client
+    ```
 
 # Project's Description
 ## Comparison between Vector DataBases
